@@ -26,7 +26,7 @@ const quote = document.querySelector('.quote');
 const prevButton = document.querySelector('.prev-button');
 const nextButton = document.querySelector('.next-button');
 
-let count = -1;
+let count = 0;
 
 
 const changeInfo = () => {
@@ -37,17 +37,16 @@ const changeInfo = () => {
 }
 
 nextButton.addEventListener('click', e => {
-    if(count > 2)
+    if(count == 1)
         count = -1;
-
     count++;
     
     changeInfo();
 })
 
 prevButton.addEventListener('click', e => {
-    if(count < 0){
-        count = 3;
+    if(count == 0){
+        count = 2;
     }
 
     count--;

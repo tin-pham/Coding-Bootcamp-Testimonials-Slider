@@ -1,7 +1,7 @@
 @import './config', './default';
 
 body{
-    min-height: calc(100vh - 2rem);
+    min-height: 100vh;
     position: relative;
     @include flex(row, center);
 }
@@ -15,7 +15,7 @@ body{
 }
 
 .img-container{
-    width: 100%;
+    width: 55%;
     background: url(../images/pattern-bg.svg) no-repeat center;
     background-size: contain;
     position: relative;
@@ -25,6 +25,7 @@ body{
         width: 150px;
         height: 50px;
         left: 50%;
+        bottom: 10px;
         transform: translate(-100%, -150%);
         background-color: rgba(32, 32, 70, 0.2);
         filter: blur(20px);
@@ -35,16 +36,16 @@ body{
         }
     }
     img{
+        width: 85%;
         border-radius: 10px;
-        max-width: 100%;
-        transform: scale(0.8);
         display: block;
         margin: 0 auto;   
+        transform: scale(.65);
     }
 
     .buttons{
         position: absolute;
-        bottom: 10%;
+        bottom: 17%;
         left: 50%;
         transform: translate(-50%, 50%);
         display: flex;
@@ -81,6 +82,7 @@ body{
 }
 
 .text-container{
+    width: 45%;
     font-size: $fs;
     text-align: center;     
     margin-top: 5rem;
@@ -89,12 +91,15 @@ body{
     position: relative;
     @include desktop{
         font-size: $fs;
-        left: 100px;
+        left: 200px;
     }
     .quote{
         color: $dark-blue;
         font-weight: $light;
         margin-bottom: 1.5rem;
+        @include desktop{
+            text-align: left;
+        }
     }
     .person{
         @include desktop{
@@ -120,6 +125,10 @@ body{
         top: 0;
         transform: translate(-50%, -50%);
         z-index: -1;
+        @include desktop{
+            left: 0;
+            transform: translate(0, -50%);
+        }
     }
 }
 
