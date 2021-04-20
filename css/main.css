@@ -10,7 +10,7 @@
           user-select: none;
 }
 
-body, html {
+body {
   min-height: calc(100vh - 2rem);
   position: relative;
   display: -webkit-box;
@@ -176,8 +176,9 @@ body, html {
 
 .bottom-img {
   position: absolute;
+  max-width: 100%;
   bottom: 0;
-  right: 0;
+  left: 0;
   z-index: -1;
 }
 

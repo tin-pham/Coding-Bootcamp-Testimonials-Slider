@@ -31,12 +31,12 @@ Users should be able to:
 
 
 #### Desktop Design
-![](./screenshots/desktop-desisn.png)
+![](./screenshots/desktop-design.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://jolly-blackwell-979cc9.netlify.app/)
 
 ## My process
 
