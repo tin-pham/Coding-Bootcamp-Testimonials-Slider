@@ -1,0 +1,138 @@
+@import './config', './default';
+
+body, html{
+    min-height: calc(100vh - 2rem);
+    position: relative;
+    @include flex(row, center);
+}
+
+.container{
+    // flex: 1 1 auto;
+    position: relative;
+    // padding: 2rem;
+    padding: 2rem;
+}
+
+.img-container{
+    width: 100%;
+    background: url(../images/pattern-bg.svg) no-repeat center;
+    background-size: contain;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        left: 50%;
+        transform: translate(-100%, -150%);
+        background-color: rgba(32, 32, 70, 0.2);
+        filter: blur(20px);
+        z-index: -1;
+        @include desktop{
+             width: 300px;
+             transform: translate(-70%, -175%);
+        }
+    }
+    img{
+        border-radius: 10px;
+        max-width: 100%;
+        transform: scale(0.8);
+        display: block;
+        margin: 0 auto;   
+    }
+
+    .buttons{
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        display: flex;
+        border-radius: 100px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(32, 32, 70, 0.3);
+        
+        @include desktop{
+            transform: translate(-200%, 50%);
+        }
+        i{
+            background: white;
+            color: $grayish-blue;
+            font-size: 1rem;
+            padding: 1em;
+            margin: 0;
+            // box-shadow: 0 5px 20px rgba(32, 32, 70, 0.3);
+            &:hover{
+                cursor: pointer;
+                background: hsl(255, 100%, 95%);
+            }
+
+            &:active{
+                background: hsl(255, 100%, 70%);
+                color: white;
+            }
+            }
+        
+        
+        
+
+    
+    }
+}
+
+.text-container{
+    font-size: $fs;
+    text-align: center;     
+    margin-top: 5rem;
+    font-family: $ff;
+    font-size: $fs - 10px;
+    position: relative;
+    @include desktop{
+        font-size: $fs;
+        left: 100px;
+    }
+    .quote{
+        color: $dark-blue;
+        font-weight: $light;
+        margin-bottom: 1.5rem;
+    }
+    .person{
+        @include desktop{
+            display: flex;
+
+        }   
+        .name{
+            @include desktop{
+                margin-right: 1rem;
+            }
+        }
+
+        .job{
+            color: $grayish-blue;
+            font-size: $fs - 10px;
+            @include flex(row, center);
+        }
+    }
+
+    &::before{
+        content: url('../images/pattern-quotes.svg');
+        position: absolute;
+        top: 0;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}
+
+.bottom-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+@include desktop{
+    .container{
+        @include flex(row-reverse, center);
+    }
+
+    
+}
